@@ -12,6 +12,8 @@
     "ts-run": "ts-node src/server.ts",
     "build": "tsc",
     "start": "NODE_PATH=./dist/src NODE_ENV=production node dist/src/server.js",
+    "start:server:pm2": "NODE_PATH=./dist/src NODE_ENV=production pm2-runtime dist/src/server.js",
+    "start:plane:pm2": "NODE_PATH=./dist/src NODE_ENV=production pm2-runtime dist/src/plane.js",
     "test": "jest --no-watchman",
     "lint-format": "prettier -c ./src/**/*.ts",
     "fix-format": "prettier -w ./src/**/*.ts",
@@ -20,10 +22,12 @@
   "dependencies": {
     "@discordjs/builders": "^0.8.1",
     "axios": "^0.25.0",
+    "body-parser": "^1.20.0",
     "discord.js": "^13.2.0",
     "dotenv": "^16.0.0",
     "express": "^4.17.1",
     "file-type": "16.5.1",
+    "pm2": "^5.2.0",
     "queue": "^6.0.2",
     "ts-node": "^10.4.0",
     "twitter-api-v2": "^1.9.0"
